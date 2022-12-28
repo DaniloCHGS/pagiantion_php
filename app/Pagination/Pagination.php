@@ -78,4 +78,20 @@ class Pagination
 
         return $pages;
     }
+    /**
+     * Retorna página anterior
+     * @return string
+     */
+    public function prevPage(){
+        $page = $this->current_page - 1;
+        return $page > 0 ? $page : 1;
+    }
+    /**
+     * Retorna página posterior
+     * @return string
+     */
+    public function nextPage(){
+        $page = $this->current_page + 1;
+        return $page > $this->pages ? $this->current_page : $page;
+    }
 }
